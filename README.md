@@ -14,7 +14,7 @@ example:
       <canvas id="2,4,6-Trichloroanisole"
               width="320"
               height="100"
-              data-SMILES="COc1c(Cl)cc(Cl)cc1Cl">
+              data-smiles="COc1c(Cl)cc(Cl)cc1Cl">
       </canvas>
    </body>
 </html>
