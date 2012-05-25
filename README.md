@@ -4,6 +4,7 @@ SMILES.js
 SMILES javascript parser &amp; renderer (HTML5 canvas, SVG)
 
 example:
+<!--
 
 <html>
    <head>
@@ -17,6 +18,8 @@ example:
       </canvas>
    </body>
 </html>
+
+-->
 
 input: "COc1c(Cl)cc(Cl)cc1Cl"
        - something with 2 letter element like 'Cl', 'Br'
