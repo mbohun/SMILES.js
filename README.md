@@ -38,7 +38,7 @@ input: "COc1c(Cl)cc(Cl)cc1Cl"
 
     3: from the internal format (adjacency matrix) starting from first element
        at [0.0, 0.0] calculate coords for each element, this way we should get
-       the width and height (minx, miny; maxx maxy)
+       the width and height (minx, miny; maxx, maxy)
        
     4: translate and render from "model space" into the viewport
        set by the user in the canvas element attributes, 320 x 100 in this case
