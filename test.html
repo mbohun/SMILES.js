@@ -1,16 +1,27 @@
 <html>
   <head>
     <title>test SMILES.js</title>
-    <script type="text/javascript" src="SMILES.js">
+    <script type="text/javascript" src="SMILES.js"></script>
+
+    <script type="text/javascript">
+      function onclick_handler() {
+      	var s = document.getElementById('smileinput').value;
+      	var c = document.getElementById('testcanvas');
+      	smiles_render_canvas(s, c);
+      }
     </script>
   </head>
 
   <body>
-    <canvas id="2,4,6-Trichloroanisole"
+    <canvas id="testcanvas"
             width="320"
             height="100"
             data-smiles="COc1c(Cl)cc(Cl)cc1Cl">
     </canvas>
+    <br/>
+    <input type="text" id="smileinput" size="60"></input>
+    <button type="button" onclick="onclick_handler()">SMILE</button>
+
   </body>
   <script>
     smiles_init();

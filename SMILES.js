@@ -3,10 +3,14 @@ function smiles_init() {
     // for canvas elements, take those that have 'data-smiles' attribute
     // and generate the molecules
     //
-    var c = document.getElementById("2,4,6-Trichloroanisole");
-    var smi = c.getAttribute("data-smiles");
-    // var smi = c.dataset.smiles; // alternative
+    var c = document.getElementById("testcanvas");
+    var s = c.getAttribute("data-smiles");
+    // var s = c.dataset.smiles; // alternative
 
+    smiles_render_canvas(s, c);
+}
+
+function smiles_render_canvas(smi, c) {
     console.log("[smi]" + smi);
 
     var tok = smiles_tokenize(smi);
@@ -19,7 +23,7 @@ function smiles_init() {
 
     var mat_adj = smiles_matrix_adjacency(tok);
 
-    smiles_render_canvas(c, mat_adj);
+    smiles_render(c, smi);
     //alert(smi);
 }
 
@@ -38,11 +42,14 @@ function smiles_matrix_adjacency(tok) {
 }
 
 // TODO: only a demo
-function smiles_render_canvas(c, mat) {
+function smiles_render(c, mat) {
     ctx = c.getContext("2d");
+
+    ctx.clearRect(0, 0, c.width, c.height);
+
     ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
     ctx.fillRect(0, 0, 320, 100);
 
-    ctx.font = "16pt Arial";
-    ctx.fillText(c.getAttribute("data-smiles"), 5, 20);
-} 
+    ctx.font = "16pt DejaVu";
+    ctx.fillText(mat, 5, 20);
+}
