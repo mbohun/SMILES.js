@@ -3,22 +3,30 @@ SMILES.js
 
 SMILES javascript parser &amp; renderer (HTML5 canvas, SVG)
 
-example:
+example (of minimal) usage:
 
 ```html
 <html>
    <head>
+      <!-- 1. include the library -->	
       <script type="text/javascript" src="SMILES.js" />
    </head>
    <body>
-      <canvas id="2,4,6-Trichloroanisole"
-              width="320"
-              height="100"
-              data-smiles="COc1c(Cl)cc(Cl)cc1Cl">
-      </canvas>
+      <!-- 2. use it -->
+      <canvas data-smiles="COc1c(Cl)cc(Cl)cc1Cl" width="320" height="100"></canvas>
    </body>
 </html>
 ```
+
+- default width height
+- default config / global settings
+- custom config (line thickness, colors, fonts, siplay of hydrogens)
+
+- graph theory, graph layout
+- HTML5 canvas, SVG, HTML5 canvas webgl
+- 3rd party libs
+
+
 
     1: input "COc1c(Cl)cc(Cl)cc1Cl"
        - something with 2 letter element like 'Cl', 'Br'
