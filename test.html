@@ -5,8 +5,9 @@
 
     <script type="text/javascript">
       function onclick_handler() {
-      	var s = document.getElementById('smileinput').value;
-      	var c = document.getElementById('testcanvas');
+      	var s = document.getElementById('smileinput').value,
+      	    c = document.getElementById('testcanvas');
+
       	smiles_render_canvas(s, c);
       }
     </script>
@@ -23,7 +24,4 @@
     <button type="button" onclick="onclick_handler()">SMILE</button>
 
   </body>
-  <script>
-    smiles_init();
-  </script>
 </html>

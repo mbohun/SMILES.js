@@ -1,4 +1,5 @@
 function smiles_init() {
+    document.removeEventListener("DOMContentLoaded", smiles_init, false);
     // this is only a demo, the real thing should scan the whole document
     // for canvas elements, take those that have 'data-smiles' attribute
     // and generate the molecules
@@ -53,3 +54,7 @@ function smiles_render(c, mat) {
     ctx.font = "16pt DejaVu";
     ctx.fillText(mat, 5, 20);
 }
+
+(function() {
+    document.addEventListener("DOMContentLoaded", smiles_init, false)
+})();
