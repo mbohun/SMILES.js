@@ -16,13 +16,13 @@ function smiles_render_canvas(smi, c) {
 
     var tok = smiles_tokenize(smi);
     var tok_dump = "";
-    for each (t in tok) {
-	tok_dump = tok_dump + t + ","; 
+    for (var i = 0; i < tok.length; i++) {
+	tok_dump = tok_dump + tok[i] + ","; 
     }
 
     console.log("[tok]" + tok_dump);
 
-    var mat_adj = smiles_matrix_adjacency(tok);
+    // var mat_adj = smiles_matrix_adjacency(tok);
 
     smiles_render(c, smi);
     //alert(smi);
@@ -36,10 +36,6 @@ function smiles_tokenize(smi) {
     }
 
     return tok;
-}
-
-function smiles_matrix_adjacency(tok) {
-
 }
 
 // TODO: only a demo
