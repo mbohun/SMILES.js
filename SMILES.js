@@ -4,7 +4,7 @@
 	x = 666;
 
     function smiles_init() {
-	document.removeEventListener("DOMContentLoaded", smiles_init, false);
+	glob.win.document.removeEventListener("DOMContentLoaded", smiles_init, false);
 	// this is only a demo, the real thing should scan the whole document
 	// for canvas elements, take those that have 'data-smiles' attribute
 	// and generate the molecules
