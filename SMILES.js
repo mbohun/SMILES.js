@@ -1,56 +1,67 @@
-function smiles_init() {
-    document.removeEventListener("DOMContentLoaded", smiles_init, false);
-    // this is only a demo, the real thing should scan the whole document
-    // for canvas elements, take those that have 'data-smiles' attribute
-    // and generate the molecules
-    //
-    var c = document.getElementById("testcanvas");
-    var s = c.getAttribute("data-smiles");
-    // var s = c.dataset.smiles; // alternative
+(function (glob) {
 
-    smiles_render_canvas(s, c);
-}
+    var dummy = 42,
+	x = 666;
 
-function smiles_render_canvas(smi, c) {
-    console.log("[smi]" + smi);
+    function smiles_init() {
+	document.removeEventListener("DOMContentLoaded", smiles_init, false);
+	// this is only a demo, the real thing should scan the whole document
+	// for canvas elements, take those that have 'data-smiles' attribute
+	// and generate the molecules
+	//
+	var c = glob.win.document.getElementById("testcanvas");
+	var s = c.getAttribute("data-smiles");
+	// var s = c.dataset.smiles; // alternative
 
-    var tok = smiles_tokenize(smi);
-    var tok_dump = "";
-    for (var i = 0; i < tok.length; i++) {
-	tok_dump = tok_dump + tok[i] + ","; 
+	render_canvas(s, c);
     }
 
-    console.log("[tok]" + tok_dump);
+    function render_canvas(smi, c) {
+	console.log("[smi]" + smi);
 
-    // var mat_adj = smiles_matrix_adjacency(tok);
+	var tok = smiles_tokenize(smi);
+	var tok_dump = "";
+	for (var i = 0; i < tok.length; i++) {
+	    tok_dump = tok_dump + tok[i] + ","; 
+	}
 
-    smiles_render(c, smi);
-    //alert(smi);
-}
+	console.log("[tok]" + tok_dump);
 
-// TODO: not the real thing yet!
-function smiles_tokenize(smi) {
-    var tok = [];
-    for (var i = 0; i < smi.length; i++) {
-	tok.push(String(smi.charAt(i)));
+	// var mat_adj = smiles_matrix_adjacency(tok);
+
+	smiles_render(c, smi);
+	//alert(smi);
     }
 
-    return tok;
-}
+    // TODO: not the real thing yet!
+    function smiles_tokenize(smi) {
+	var tok = [];
+	for (var i = 0; i < smi.length; i++) {
+	    tok.push(String(smi.charAt(i)));
+	}
 
-// TODO: only a demo
-function smiles_render(c, mat) {
-    ctx = c.getContext("2d");
+	return tok;
+    }
 
-    ctx.clearRect(0, 0, c.width, c.height);
+    // TODO: only a demo
+    function smiles_render(c, mat) {
+	ctx = c.getContext("2d");
 
-    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-    ctx.fillRect(0, 0, 320, 100);
+	ctx.clearRect(0, 0, c.width, c.height);
 
-    ctx.font = "16pt DejaVu";
-    ctx.fillText(mat, 5, 20);
-}
+	ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+	ctx.fillRect(0, 0, 320, 100);
 
-(function() {
-    document.addEventListener("DOMContentLoaded", smiles_init, false)
-})();
+	ctx.font = "16pt DejaVu";
+	ctx.fillText(mat, 5, 20);
+    }
+
+    // TODO: proper check if we have window.document
+    glob.win.document.addEventListener("DOMContentLoaded", smiles_init, false);
+    glob.win["smiles_render_canvas"] = render_canvas;
+
+    // return {
+    // 	smiles_render_canvas: render_canvas
+    // };
+
+})({win:window});
