@@ -18,7 +18,7 @@ CONCEPT/IDEA example (of minimal) usage:
 </html>
 ```
 
-<img src="https://github.com/mbohun/SMILES.js/blob/master/TCA-320x200.png" width=320 height=200></img>
+[TCA-320x200.png]
 
 1. Read the input [SMILES](http://en.wikipedia.org/wiki/SMILES), one can add other input formats later. 
 
