@@ -18,7 +18,8 @@ CONCEPT/IDEA example (of minimal) usage:
 </html>
 ```
 That should produce/render an image (of 2,4,6-trichloroanisole molecule) looking something like: 
-<img src="https://github.com/mbohun/SMILES.js/raw/master/TCA-320x200.png" alt="blah" width=320 height=200></img>
+<img src="https://github.com/mbohun/SMILES.js/raw/master/TCA-320x200.png" alt="2,4,6-trichloroanisole" width=320 height=200></img><p/>
+
 (This one was made/generated from the above SMILES in [BKChem](http://bkchem.zirael.org) and edited with [GIMP](http://www.gimp.org))
 
 1. Read the input [SMILES](http://en.wikipedia.org/wiki/SMILES), one can add other input formats later. 
