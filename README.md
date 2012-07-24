@@ -13,12 +13,12 @@ CONCEPT/IDEA example (of minimal) usage:
    </head>
    <body>
       <!-- 2. use it -->
-      <canvas data-smiles="COc1c(Cl)cc(Cl)cc1Cl" width="320" height="100"></canvas>
+      <canvas data-smiles="COc1c(Cl)cc(Cl)cc1Cl" width="320" height="200"></canvas>
    </body>
 </html>
 ```
 
-[TCA-320x200.png]
+<img src="https://github.com/mbohun/SMILES.js/raw/master/TCA-320x200.png" alt="blah" width=320 height=200></img>
 
 1. Read the input [SMILES](http://en.wikipedia.org/wiki/SMILES), one can add other input formats later. 
 
