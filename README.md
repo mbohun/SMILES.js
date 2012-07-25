@@ -1,10 +1,8 @@
 SMILES.js
-=========
+========= _SMILES parser &amp; molecule rendering library_
 
-SMILES parser &amp; molecule renderering library
-
-_CONCEPT_
-example (of minimal) usage:
+__CONCEPT__
+An example (of minimal) usage:
 
 ```html
 <html>
