@@ -23,11 +23,11 @@ That should produce/render an image (of 2,4,6-trichloroanisole molecule) looking
 
 (This one was made/generated from the above SMILES in [BKChem](http://bkchem.zirael.org) and edited with [GIMP](http://www.gimp.org))
 
-1. Read the input [SMILES](http://en.wikipedia.org/wiki/SMILES), one can add other input formats later. 
-2. Parse/interpret the input into some internal format/representation of the molecule/graph (for example adjacency matrix/list or incidence matrix, etc.).
-3. From the internal format (adjacency matrix) calculate the coords for each node and edge ("model space"). Translate and render from "model space" into the viewport (in the above example/snippet set by the user in the canvas element attributes width and height).
+1.  Read the input [SMILES](http://en.wikipedia.org/wiki/SMILES), one can add other input formats later. 
+2.  Parse/interpret the input into some internal format/representation of the molecule/graph (for example adjacency matrix/list or incidence matrix, etc.).
+3.  From the internal format (adjacency matrix) calculate the coords for each node and edge ("model space"). Translate and render from "model space" into the viewport (in the above example/snippet set by the user in the canvas element attributes width and height).
 
-NOTES/GOALS/IDEAS:
+__NOTEs/GOALs/IDEAs__
 - minimalist
 - modular/portable (modules should run in browser or server side)
 - default config / global settings (canvas width, height)
