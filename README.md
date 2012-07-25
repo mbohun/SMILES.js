@@ -1,8 +1,8 @@
 SMILES.js
-========= _SMILES parser &amp; molecule rendering library_
+=========
 
 __CONCEPT__
-An example (of minimal) usage:
+example (of minimal) usage:
 
 ```html
 <html>
@@ -36,5 +36,5 @@ __NOTEs/GOALs/IDEAs__
 - 3rd party libs
 
 I wanted a real/usable JavaScript/HTML5 project/experiment/playground/demo as I read:
-- "JavaScript: The Good Parts" by Douglas Crockford
-- "Supercharged JavaScript Graphics" by Raffaele Cecco
+* "JavaScript: The Good Parts" by Douglas Crockford
+* "Supercharged JavaScript Graphics" by Raffaele Cecco
