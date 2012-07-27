@@ -1,7 +1,7 @@
 SMILES.js
 =========
 
-__CONCEPT__
+##concept
 example (of minimal) usage:
 
 ```html
@@ -21,11 +21,12 @@ That should produce/render an image (of 2,4,6-trichloroanisole molecule) looking
 
 (This one was made/generated from the above SMILES in [BKChem](http://bkchem.zirael.org) and edited with [GIMP](http://www.gimp.org))
 
-1.  Read the input [SMILES](http://en.wikipedia.org/wiki/SMILES), one can add other input formats later. 
+##design & impl
+1.  Read the input [SMILES](http://en.wikipedia.org/wiki/SMILES) (one can add other input formats later).
 2.  Parse/interpret the input into some internal format/representation of the molecule/graph (for example adjacency matrix/list or incidence matrix, etc.).
 3.  From the internal format (adjacency matrix) calculate the coords for each node and edge ("model space"). Translate and render from "model space" into the viewport (in the above example/snippet set by the user in the canvas element attributes width and height).
 
-__NOTEs/GOALs/IDEAs__
+##notes
 - minimalist
 - modular/portable (modules should run in browser or server side)
 - default config / global settings (canvas width, height)
@@ -35,13 +36,8 @@ __NOTEs/GOALs/IDEAs__
 - optimization, caching (local storage, webworkers, etc.)
 - 3rd party libs
 
+##misc
 I wanted a real/usable JavaScript/HTML5 project/experiment/playground/demo as I read:
 * "JavaScript: The Good Parts" by Douglas Crockford
 * "Supercharged JavaScript Graphics" by Raffaele Cecco
 
-#test
-##test
-###test
-####test
-#####test
-######test
