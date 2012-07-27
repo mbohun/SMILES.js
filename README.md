@@ -38,3 +38,10 @@ __NOTEs/GOALs/IDEAs__
 I wanted a real/usable JavaScript/HTML5 project/experiment/playground/demo as I read:
 * "JavaScript: The Good Parts" by Douglas Crockford
 * "Supercharged JavaScript Graphics" by Raffaele Cecco
+
+#test
+##test
+###test
+####test
+#####test
+######test
