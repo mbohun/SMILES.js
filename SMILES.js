@@ -1,6 +1,6 @@
 (function (glob) {
 
-    function smiles_init() {
+    var smiles_init = function () {
 	glob.win.document.removeEventListener("DOMContentLoaded", smiles_init, false);
 	// this is only a demo, the real thing should scan the whole document
 	// for canvas elements, that have a 'data-smiles' attribute set
@@ -11,9 +11,9 @@
 	// var s = c.dataset.smiles; // alternative
 
 	render_canvas(s, c);
-    }
+    };
 
-    function render_canvas(smi, c) {
+    var render_canvas = function (smi, c) {
 	console.log("[smi]" + smi);
 
 	var tok = smiles_tokenize(smi);
@@ -21,7 +21,7 @@
 
 	// var mat_adj = smiles_matrix_adjacency(tok);
 	smiles_render(c, tok);
-    }
+    };
 
     var smiles_tokenize = (function () {
         "use strict";
@@ -78,7 +78,7 @@
     }());
 
     // TODO: only a demo
-    function smiles_render(c, mat) {
+    var smiles_render = function (c, mat) {
 	var ctx = c.getContext("2d");
 
 	ctx.clearRect(0, 0, c.width, c.height);
@@ -88,7 +88,7 @@
 
 	ctx.font = "10pt DejaVu";
 	ctx.fillText(mat, 5, 20);
-    }
+    };
 
     // TODO: proper check if we have window.document
     glob.win.document.addEventListener("DOMContentLoaded", smiles_init, false);
