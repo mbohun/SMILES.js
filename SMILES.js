@@ -3,8 +3,8 @@
     function smiles_init() {
 	glob.win.document.removeEventListener("DOMContentLoaded", smiles_init, false);
 	// this is only a demo, the real thing should scan the whole document
-	// for canvas elements, take those that have 'data-smiles' attribute
-	// and generate the molecules
+	// for canvas elements, that have a 'data-smiles' attribute set
+	// and generate the molecules for those.
 	//
 	var c = glob.win.document.getElementById("testcanvas");
 	var s = c.getAttribute("data-smiles");
