@@ -2,15 +2,20 @@
 
     var smiles_init = function () {
 	glob.win.document.removeEventListener("DOMContentLoaded", smiles_init, false);
-	// this is only a demo, the real thing should scan the whole document
-	// for canvas elements, that have a 'data-smiles' attribute set
-	// and generate the molecules for those.
+	// scan the whole document for canvas elements with
+	// the custom 'data-smiles' attribute and process them.
 	//
-	var c = glob.win.document.getElementById("testcanvas");
-	var s = c.getAttribute("data-smiles");
-	// var s = c.dataset.smiles; // alternative
+	var ce = glob.win.document.getElementsByTagName("canvas"),
+	    i,
+	    s;
 
-	render_canvas(s, c);
+	for (i = 0; i < ce.length; i += 1) {
+	    s = ce[i].getAttribute("data-smiles"); // c.dataset.smiles; // alternative
+	    console.log("[smiles_init][" + i + "]:" + s);
+	    if (s) {
+		render_canvas(s, ce[i]);
+	    }
+	}
     };
 
     var render_canvas = function (smi, c) {
@@ -19,7 +24,7 @@
 	var tok = smiles_tokenize(smi);
 	console.log("[tok]" + tok);
 
-	// var mat_adj = smiles_matrix_adjacency(tok);
+	var mat_adj = smiles_matrix_adjacency(tok);
 	smiles_render(c, tok);
     };
 
@@ -76,6 +81,10 @@
             return tok;
         };
     }());
+
+    var smiles_matrix_adjacency = function (tok) {
+	return tok;
+    };
 
     // TODO: only a demo
     var smiles_render = function (c, mat) {
