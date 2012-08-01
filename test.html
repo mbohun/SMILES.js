@@ -4,12 +4,12 @@
     <script type="text/javascript" src="SMILES.js"></script>
 
     <script type="text/javascript">
-      function onclick_handler() {
+      var onclick_handler = function () {
       	var s = document.getElementById('smileinput').value,
       	    c = document.getElementById('testcanvas');
 
       	smiles_render_canvas(s, c);
-      }
+      };
     </script>
   </head>
 
