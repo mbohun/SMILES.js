@@ -10,7 +10,7 @@
 	    s;
 
 	for (i = 0; i < ce.length; i += 1) {
-	    s = ce[i].getAttribute("data-smiles"); // c.dataset.smiles; // alternative
+	    s = ce[i].getAttribute("data-smiles"); // ce[i].dataset.smiles; // alternative
 	    console.log("[smiles_init][" + i + "]:" + s);
 	    if (s) {
 		render_canvas(s, ce[i]);
