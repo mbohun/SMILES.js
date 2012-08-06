@@ -1,11 +1,12 @@
 (function (glob) {
+    var window = glob.win,
+	document = window.document;
 
     var smiles_init = function () {
-	glob.win.document.removeEventListener("DOMContentLoaded", smiles_init, false);
 	// scan the whole document for canvas elements with
 	// the custom 'data-smiles' attribute and process them.
 	//
-	var ce = glob.win.document.getElementsByTagName("canvas"),
+	var ce = document.getElementsByTagName("canvas"),
 	    i,
 	    s;
 
@@ -82,6 +83,7 @@
         };
     }());
 
+    // TODO: only a demo
     var smiles_matrix_adjacency = function (tok) {
 	return tok;
     };
@@ -100,8 +102,24 @@
     };
 
     // TODO: proper check if we have window.document
-    glob.win.document.addEventListener("DOMContentLoaded", smiles_init, false);
-    glob.win["smiles_render_canvas"] = render_canvas;
+    if (document) {
+	document.addEventListener("DOMContentLoaded",
+				  function() {
+				      document.removeEventListener("DOMContentLoaded",
+								   smiles_init,
+								   false);
+
+				      smiles_init();
+				  },
+				  false);
+    }
+
+    // TODO: something more civilized, like build public API in form of smiles
+    // object; and then add the smiles object to the window, instead of adding
+    // single functions and directly to window
+    if (window) {
+	window["smiles_render_canvas"] = render_canvas;
+    }
 
     // return {
     // 	smiles_render_canvas: render_canvas
