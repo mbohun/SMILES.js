@@ -31,7 +31,7 @@ That should produce/render an image (of 2,4,6-trichloroanisole molecule) looking
 - modular (modules can be used in client AND on server, i.e. they do not make any assumption/restriction about the environment they run within), platform specific features are clearly separated from the 'generic' ones
 - default config / global settings (canvas width, height)
 - custom config (line thickness, colors, fonts, display of hydrogens), HTML5 canvas (2d, webgl), SVG
-- engine config - configuration does not have to be restricted to visualization only, but for example we can let the user to chose 'single-threaded' OR 'multi-threaded' mode [Web Workers](http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html); 'multi-threaded' mode is suitable for processing large amount of (complex) input 
+- engine config - configuration does not have to be restricted to visualization only, but for example we can let the user to chose 'single-threaded' OR 'multi-threaded' mode ([Web Workers](http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html)); 'multi-threaded' mode is suitable for processing large amount of (complex) input 
 - pluggable molecule/graph layouts/styles
 - optimization, caching (local storage, webworkers, etc.)
 - 3rd party libs
