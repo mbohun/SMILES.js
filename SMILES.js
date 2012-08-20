@@ -2,29 +2,26 @@
     var window = glob.win,
 	document = window.document;
 
+    // collect canvases with our custom 'data-smiles' attribute
     var smiles_init = function () {
-	// scan the whole document for canvas elements with
-	// the custom 'data-smiles' attribute and process them.
-	//
 	var ce = document.getElementsByTagName("canvas"),
 	    molecules = [],
 	    i,
 	    s;
 
-	// no canvas-es, not much to do
 	if (!ce) {
 	    return;
 	}
 
 	for (i = 0; i < ce.length; i += 1) {
-	    // collect those with our custom attribute
 	    s = ce[i].getAttribute("data-smiles");
 	    if (s) {
 		molecules.push({"canvas": ce[i], "smiles": s});
 	    }
 	}
 
-	// TODO: this is naive impl., allow for the processing in separate thread/webworker
+	// TODO: this is only a naive impl. for now, the real thing will allow
+	// for processing in a separate thread/webworker
 	//
 	for (i = 0; i < molecules.length; i += 1) {
 	    console.log("[smiles_init][" + i + "]:" + molecules[i]["smiles"]);
