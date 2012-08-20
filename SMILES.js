@@ -7,15 +7,28 @@
 	// the custom 'data-smiles' attribute and process them.
 	//
 	var ce = document.getElementsByTagName("canvas"),
+	    molecules = [],
 	    i,
 	    s;
 
+	// no canvas-es, not much to do
+	if (!ce) {
+	    return;
+	}
+
 	for (i = 0; i < ce.length; i += 1) {
-	    s = ce[i].getAttribute("data-smiles"); // ce[i].dataset.smiles; // alternative
-	    console.log("[smiles_init][" + i + "]:" + s);
+	    // collect those with our custom attribute
+	    s = ce[i].getAttribute("data-smiles");
 	    if (s) {
-		render_canvas(s, ce[i]);
+		molecules.push({"canvas": ce[i], "smiles": s});
 	    }
+	}
+
+	// TODO: this is naive impl., allow for the processing in separate thread/webworker
+	//
+	for (i = 0; i < molecules.length; i += 1) {
+	    console.log("[smiles_init][" + i + "]:" + molecules[i]["smiles"]);
+	    render_canvas(molecules[i]["smiles"], molecules[i]["canvas"]);
 	}
     };
 
