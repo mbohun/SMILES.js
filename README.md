@@ -1,4 +1,4 @@
-SMILES.js
+SMILES.js (work in progress)
 =========
 
 ##concept
